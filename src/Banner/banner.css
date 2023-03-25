@@ -1,3 +1,4 @@
+/* Container */
 .banner{
     font-size: calc(16px + 1vw);
 
@@ -16,12 +17,14 @@
     background-attachment:fixed;
 }
 
+/* Heading text */
 .bannerHeading{
     transform: translate(0,3rem);
     color: white;
     font-size: 1em;
     font-weight: 300;
 }
+/* Description text */
 .bannerText{
     transform: translate(0,3rem);
     width: 80%;
@@ -30,6 +33,7 @@
     font-weight: 100;
 }
 
+/* for Desktop */
 @media screen and (min-width: 600px) {
     .banner{
         font-size: calc(25px + 1vw);

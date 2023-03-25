@@ -6,6 +6,7 @@ var sfStatus = React.createRef();
 var sfReuse = React.createRef();
 var sfType = React.createRef();
 
+// Search form
 class SearchForm extends React.Component {
     constructor() {
         super();
@@ -18,11 +19,12 @@ class SearchForm extends React.Component {
         }
     }
 
-    componentDidMount() {
+    componentDidMount() { 
         this.fetchData();
 
     }
 
+    // fetching default data from api
     async fetchData(url = "https://api.spacexdata.com/v3/capsules") {
         const response = await fetch(url);
         const jsonData = await response.json();
@@ -31,6 +33,7 @@ class SearchForm extends React.Component {
         });
     }
 
+    // getting form data
     async getUserData() {
         this.setState({
             status: sfStatus.current.value,
@@ -39,6 +42,7 @@ class SearchForm extends React.Component {
         });
     }
 
+    // get requested data from api using the user selected fields in the form
     async displayResults() {
         await this.getUserData();
         var url = "https://api.spacexdata.com/v3/capsules?reuse_count=" + this.state.reuse + "&type=" +
@@ -50,10 +54,13 @@ class SearchForm extends React.Component {
     render() {
         return (
             <>
+            {/* Container */}
                 <div className="searchForm">
+                    {/* title */}
                     <div className="sfTitle">Search Form</div>
                     <div className="sfFilterContainer">
 
+                        {/* Drop down menu */}
                         <div className='sfFilter'>
                             <span>Capsule Status</span>
                             <select name="status" ref={sfStatus}>
@@ -65,6 +72,7 @@ class SearchForm extends React.Component {
                             </select>
                         </div>
 
+                        {/* Drop down menu */}
                         <div className='sfFilter'>
                             <span>Capsule Reuse Count</span>
                             <select name="reuse" ref={sfReuse}>
@@ -74,7 +82,8 @@ class SearchForm extends React.Component {
                                 <option value="2">2</option>
                             </select>
                         </div>
-
+                        
+                        {/* Drop down menu */}
                         <div className='sfFilter'>
                             <span>Capsule Type</span>
                             <select name="type" ref={sfType}>
@@ -85,11 +94,13 @@ class SearchForm extends React.Component {
                             </select>
                         </div>
 
+                        {/* Search button */}
                         <button className="sfButton" type="button"
                             onClick={() => this.displayResults()}>Search</button>
                     </div>
                 </div>
 
+                {/* Tile list containing all the tiles with capsule data */}
                 <div className='dataTileContainer'>
                     <DataTileList data={this.state.apiData} />
                 </div>

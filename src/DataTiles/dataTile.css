@@ -1,3 +1,4 @@
+/* tile container */
 .tile{
     position: relative;
     font-size: calc(16px + 1vw);
@@ -14,12 +15,15 @@
 .tile:hover{
     box-shadow: 0px 0px 15px 5px grey;
 }
+/* heading */
 .tHeading{
     font-weight:600;
 }
+/* date */
 .tDate{
     font-size: calc(10px + 1vw);
-}
+} 
+/* status */
 .tStatus{
     font-size: calc(10px + 1vw);
 }
@@ -27,6 +31,7 @@
     color: red;
 }
 
+/* details box */
 .lightbox{
     position: absolute;
     z-index: 6;

@@ -2,11 +2,13 @@ import React from "react";
 import DataTile from "../DataTiles/dataTile";
 import "./dataTileList.css";
 
+// Capsule Tile Container
 class DataTileList extends React.Component {
     render() {
         const { loadMoreResults } = this.props;
         return (
             <>
+                {/* Tile list container */}
                 <div className="tileList">
                     {
                         this.props.data.map((capsule, index) =>
@@ -14,6 +16,7 @@ class DataTileList extends React.Component {
                         )
                     }
                 </div>
+                {/* Footer */}
                 <div className="tLoadMore">
 
                 </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import "./dataTile.css";
 
+// Single tile component
 class DataTile extends React.Component {
     constructor() {
         super();
@@ -10,6 +11,7 @@ class DataTile extends React.Component {
         }
     }
 
+    // details box show-noshow
     showLightbox = () => {
         this.state.show = !this.state.show;
         this.setState({
@@ -18,6 +20,7 @@ class DataTile extends React.Component {
 
     }
 
+    // details box definition
     Lightbox = () => {
         console.log(this.state);
         return (
@@ -41,6 +44,7 @@ class DataTile extends React.Component {
         // {console.log(this.props.data)}
         return (
             <>
+                {/* Rendering single tile component */}
                 <div className="tile"
                     onClick={this.showLightbox}>
                     <p className="tHeading">{this.props.data.type}</p>
