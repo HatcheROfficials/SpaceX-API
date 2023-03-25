@@ -1,5 +1,17 @@
 .tileList{
+    padding: 1em;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+.tLoadMore{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vw;
+    font-size: calc(10px + 1vw);
+    color: grey;
+}
+.tLoadMore:hover{
+    color: black;
 }

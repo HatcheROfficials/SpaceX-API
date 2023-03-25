@@ -7,18 +7,20 @@ var sfReuse = React.createRef();
 var sfType = React.createRef();
 
 class SearchForm extends React.Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
             status: "noSelect",
             reuse: "noSelect",
             type: "noSelect",
-            apiData: []
+            apiData: [],
+            newCount: 5
         }
     }
 
     componentDidMount() {
         this.fetchData();
+
     }
 
     async fetchData(url = "https://api.spacexdata.com/v3/capsules") {
@@ -35,8 +37,13 @@ class SearchForm extends React.Component {
             reuse: sfReuse.current.value,
             type: sfType.current.value
         });
-        
-        const url = "https://api.spacexdata.com/v3/capsules";
+    }
+
+    async displayResults() {
+        await this.getUserData();
+        var url = "https://api.spacexdata.com/v3/capsules?reuse_count=" + this.state.reuse + "&type=" +
+            this.state.type.toString() + "&status=" + this.state.status;
+        console.log(url);
         await this.fetchData(url);
     }
 
@@ -52,9 +59,9 @@ class SearchForm extends React.Component {
                             <select name="status" ref={sfStatus}>
                                 <option value="">No Select</option>
                                 <option value="active">Active</option>
-                                <option value="Feb">Destroyed</option>
-                                <option value="Mar">Retired</option>
-                                <option value="Apr">Unknown</option>
+                                <option value="destroyed">Destroyed</option>
+                                <option value="retired">Retired</option>
+                                <option value="unknown">Unknown</option>
                             </select>
                         </div>
 
@@ -79,12 +86,12 @@ class SearchForm extends React.Component {
                         </div>
 
                         <button className="sfButton" type="button"
-                            onClick={() => this.getUserData()}>Search</button>
+                            onClick={() => this.displayResults()}>Search</button>
                     </div>
                 </div>
 
                 <div className='dataTileContainer'>
-                    <DataTileList data={this.state.apiData}/>
+                    <DataTileList data={this.state.apiData} />
                 </div>
             </>
         );

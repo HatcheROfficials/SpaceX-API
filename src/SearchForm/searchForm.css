@@ -46,3 +46,17 @@
 .sfButton:hover{
     box-shadow: 1px 1px 5px 5px rgb(221, 221, 221);
 }
+
+@media screen and (max-width:600px) {
+    .searchForm{
+        display: flex;
+        flex-direction: column;
+    }
+    .sfFilterContainer{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+}

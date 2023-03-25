@@ -1,6 +1,51 @@
 .tile{
+    position: relative;
     font-size: calc(16px + 1vw);
     padding: 0.5em;
     margin: 0.5em;
+
+    width: 10em;
+    aspect-ratio: 1/1;
     border: 2px solid black;
+    border-radius: 0.5em;
+
+    background-color: rgb(240, 240, 240);
+}
+.tile:hover{
+    box-shadow: 0px 0px 15px 5px grey;
+}
+.tHeading{
+    font-weight:600;
+}
+.tDate{
+    font-size: calc(10px + 1vw);
+}
+.tStatus{
+    font-size: calc(10px + 1vw);
+}
+.tStatus span::first-letter{
+    color: red;
+}
+
+.lightbox{
+    position: absolute;
+    z-index: 6;
+
+    top: 0;
+    left: 0;
+    transform: translate(-2em,0);
+    width: 15em;
+    aspect-ratio: 1/1;
+
+    border-radius: 2em;
+    box-shadow: 0 0 2em 2em grey;
+
+    box-sizing: border-box;
+    padding: 1em;
+    background-color: white;
+}
+.tDetails{
+    text-decoration: underline;
+    text-align: center;
+    font-size: calc(5px + 1vw);
 }
