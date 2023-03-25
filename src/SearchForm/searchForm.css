@@ -1,0 +1,48 @@
+.searchForm{
+    font-size: calc(16px + 1vw);
+    padding: 1em;
+}
+.sfTitle{
+    font-size: 1.5em;
+    color: grey;
+}
+.sfFilterContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sfFilter{
+    margin: 1em;
+    color: grey;
+}
+.sfFilter select{
+    display: flex;
+    flex-direction: row;
+    margin: 1em;
+    padding: 0em 0.5em;
+    width: 10em;
+
+    font-size: 0.8em;
+
+    border: 1px solid black;
+    border-radius: 0.5em;
+}
+.sfFilter select option{
+    font-size: 0.8em;
+}
+.sfButton{
+    padding: 0.5em 1em;
+    width: 10em;
+
+    border-radius: 0.5em;
+    border: 1px solid grey;
+    background-color: rgb(216, 216, 216);
+
+    color: black;
+    font-size: 0.8em;
+}
+.sfButton:hover{
+    box-shadow: 1px 1px 5px 5px rgb(221, 221, 221);
+}

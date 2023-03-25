@@ -1,0 +1,46 @@
+.banner{
+    font-size: calc(16px + 1vw);
+
+    position: relative;
+    height: 50vh;
+    width: 100vw;
+    margin: 0;
+
+    box-sizing: border-box;
+    padding: 1rem;
+
+    background-image: url(https://cdn.mos.cms.futurecdn.net/Yyqi7Z5skc5UnbUXBGrwac.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment:fixed;
+}
+
+.bannerHeading{
+    transform: translate(0,3rem);
+    color: white;
+    font-size: 1em;
+    font-weight: 300;
+}
+.bannerText{
+    transform: translate(0,3rem);
+    width: 80%;
+    color: white;
+    font-size: 0.8em;
+    font-weight: 100;
+}
+
+@media screen and (min-width: 600px) {
+    .banner{
+        font-size: calc(25px + 1vw);
+    }
+    .bannerHeading{
+        transform: translate(0,3rem);
+        font-size: 1em;
+    }
+    .bannerText{
+        transform: translate(0,3rem);
+        width: 50%;
+        font-size: 0.5em;
+    }
+}
