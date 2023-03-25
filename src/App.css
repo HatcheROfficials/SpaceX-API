@@ -13,4 +13,7 @@ body {
     background-image: linear-gradient(var(--baseColorDark), var(--baseColorLight) 15%, var(--baseColorLight) 85%, var(--baseColorDark));
     color: var(--baseFontColor);
 }
- 
+
+::-webkit-scrollbar{
+    display: none;
+}
